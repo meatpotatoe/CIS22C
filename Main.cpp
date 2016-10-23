@@ -36,8 +36,26 @@ int main()
 	cout << "Number of items: " << stringstack.getCount() << endl;
 	stringstack.pop(*stringstack.getTop());
 	cout << "Number of items: " << stringstack.getCount() << endl;
-	stringstack.isEmpty();
 
 	system("pause");
 	return 0;
 }
+
+/*
+Output:
+17
+Number of items: 3
+7
+Number of items: 2
+4
+Number of items: 1
+Number if items: 0
+Intstack is empty!
+
+World
+Number of items: 2
+Hello
+Number of items: 1
+Number of items: 0
+Press any key to continue . . .
+*/
