@@ -10,48 +10,48 @@ struct nodeType
 };
 
 template<class Type>
-class linkedListIterator
+class linkedList
 {
 public:
-	linkedListIterator();
-	linkedListIterator(nodeType<Type>*);
+	linkedList();
+	linkedList(nodeType<Type>*);
 	Type operator*();
-	linkedListIterator<Type> operator++();
-	bool operator==(const linkedListIterator<Type>&) const;
-	bool operator!=(const linkedListIterator<Type>&) const;
+	linkedList<Type> operator++();
+	bool operator==(const linkedList<Type>&) const;
+	bool operator!=(const linkedList<Type>&) const;
 private:
 	nodeType<Type> *current;
 };
 template <class Type>
-linkedListIterator<Type>::linkedListIterator()
+linkedList<Type>::linkedList()
 {
 	current = NULL;
 }
 
 template <class Type>
-linkedListIterator<Type>::linkedListIterator(nodeType<Type> *ptr)
+linkedList<Type>::linkedList(nodeType<Type> *ptr)
 {
 	current = ptr;
 }
 template <class Type>
-Type linkedListIterator<Type>::operator*()
+Type linkedList<Type>::operator*()
 {
 	return current->info;
 }
 template <class Type>
-linkedListIterator<Type> linkedListIterator<Type>::operator++()
+linkedList<Type> linkedList<Type>::operator++()
 {
 	current = current->link;
 	return *this;
 }
 template <class Type>
-bool linkedListIterator<Type>::operator==(const linkedListIterator<Type>&) const
+bool linkedList<Type>::operator==(const linkedList<Type>&) const
 {
 	return (current == other.current);
 
 }
 template <class Type>
-bool linkedListIterator<Type>::operator!=(const linkedListIterator<Type>&) const
+bool linkedList<Type>::operator!=(const linkedList<Type>&) const
 {
 	return (current != other.current);
 }
