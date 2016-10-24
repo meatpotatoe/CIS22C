@@ -13,14 +13,14 @@ public:
 	void print() const;
 	int length() const;
 	void destroyList();
-	Type front() const;
-	Type back() const;
+	Type printTop() const;
+	Type printBot() const;
 	virtual bool search(const Type&) const = 0;
 	virtual void insertFirst(const Type&) = 0;
 	virtual void insertLast(const Type&) = 0;
 	virtual void deleteNode(const Type&) = 0;
-	linkedListIterator<Type> begin();
-	linkedListIterator<Type> end();
+	linkedList<Type> begin();
+	linkedList<Type> end();
 	linkedListType();
 	linkedListType(const linkedListType<Type>&);
 	~linkedListType();
@@ -48,7 +48,7 @@ linkedListType<Type>::linkedListType()
 template<class Type>
 void linkedListType<Type>::destroyList()
 {
-	nodeType<Type> *te, p;
+	nodeType<Type> *temp;
 	while (first != NULL)
 	{
 		temp = first;
@@ -80,27 +80,27 @@ int linkedListType<Type>::length() const
 	return count;
 }
 template<class Type>
-Type linkedListType<Type>::front() const
+Type linkedListType<Type>::printTop() const
 {
 	assert(first != NULL);
 	return first->info;
 }
 template<class Type>
-Type linkedListType<Type>::back() const
+Type linkedListType<Type>::printBot() const
 {
 	assert(last != NULL);
 	return last->info;
 }
 template<class Type>
-linkedListIterator<Type> linkedListType<Type>::begin()
+linkedList<Type> linkedListType<Type>::begin()
 {
-	linkedListIterator<Type> temp(first);
+	linkedList<Type> temp(first);
 	return temp;
 }
 template<class Type>
-linkedListIterator<Type> linkedListType<Type>::end()
+linkedList<Type> linkedListType<Type>::end()
 {
-	linkedListIterator<Type> temp(NULL);
+	linkedList<Type> temp(NULL);
 	return temp;
 }
 template<class Type>
@@ -156,3 +156,4 @@ const linkedListType<Type>& linkedListType<Type>::operator =(const linkedListTyp
 }
 
 #endif
+
