@@ -5,7 +5,7 @@ using namespace std;
 template <class Type>
 struct nodeType
 {
-	Type info;
+	Type data;
 	nodeType<Type> *link;
 };
 
@@ -36,7 +36,7 @@ linkedList<Type>::linkedList(nodeType<Type> *ptr)
 template <class Type>
 Type linkedList<Type>::operator*()
 {
-	return current->info;
+	return current->data;
 }
 template <class Type>
 linkedList<Type> linkedList<Type>::operator++()
