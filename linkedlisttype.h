@@ -21,6 +21,7 @@ public:
 	void insertLast(Type&);
 	void deleteNode(Type&);
 	void deleteNodeFirst();
+	void deleteNodeLast();
 	linkedListType();
 	linkedListType(const linkedListType<Type>&);
 	~linkedListType();
@@ -144,8 +145,21 @@ void insertLast(Type& other) {
 	count++;
 }
 template<class Type>
-void deleteNode(const Type&) {
+void linkedListType<Type>::deleteNodeLast() 
+{
+	nodeType<Type> *temp1;
+	temp1 = new nodeType<Type>();
+	temp1 = first;
 
+	nodeType<Type> *old_temp;
+	old_temp = new nodeType<Type>();
+	while (temp1->link != NULL)
+	{
+		old_temp = temp1;
+		temp1 = temp1->link;
+	}
+	old_temp->link = NULL;
+	delete temp1;
 }
 
 template<class Type>
