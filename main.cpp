@@ -32,8 +32,8 @@ int main()
 		cout << "The Stack is not empty." << endl;
 	cout << "Testing Pop" << endl;
 	intstack.pop();
-	cout << intstack.getTop() << endl;//Should be 56
-	cout << intstack.getCount() << endl; //Should be 3
+	cout << "Top value of stack: " << intstack.getTop() << endl;//Should be 56
+	cout << "Number of Elements in the Stack: " << intstack.getCount() << endl; //Should be 3
 	intstack.pop();
 	cout << "Top Value of the Stack: " << intstack.Top() << endl;//Should be 34
 	cout << "Number of Elements in the Stack: " << intstack.getCount() << endl;// Should be 2
@@ -63,8 +63,8 @@ int main()
 		cout << "The Stack is not empty." << endl;
 	cout << "Testing Pop" << endl;
 	stringstack.pop();
-	cout << stringstack.getTop() << endl;//"Testing"
-	cout << stringstack.getCount() << endl; //Should be 3
+	cout << "Top value of Stack: " <<stringstack.getTop() << endl;//"Testing"
+	cout << "Number of Elements in Stack: " << stringstack.getCount() << endl; //Should be 3
 	stringstack.pop();
 	cout << "Top Value of the Stack: " << stringstack.Top() << endl;//"World"
 	cout << "Number of Elements in the Stack: " << stringstack.getCount() << endl;// Should be 2
@@ -74,6 +74,8 @@ int main()
 	stringstack.pop();
 	cout << "Number of Elements in the Stack: " << stringstack.getCount() << endl;//Should be 0
 	cout << endl;
+
+
 
 
 	system("pause");
