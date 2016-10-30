@@ -14,7 +14,8 @@ public:
 	bool isEmpty() const;//Checks if the Stack is Empty. -Complete-
 	Type getTop() const;//Gets the top of the stack. -TComplete-
 	void push(Type);//Pushes the input into the stack. -Complete-
-	void pop();
+	void pop(); //Deletes the top of the Stack
+	void clear(); //Clears the entire list
 
 };
 
@@ -49,4 +50,10 @@ Type Stack<Type>::getTop() const
 	return this->Top();
 }
 
+
+template<class Type>
+void Stack<Type>::clear()
+{
+	return linkedListType::destroyList();
+}
 #endif
