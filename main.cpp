@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include "Stack.h"
+#include "Queue.h"
 #include "linkedlist.h"
 
 using namespace std;
@@ -11,8 +12,10 @@ int main()
 	Stack<int> intstack;
 	linkedListType<int> list;
 	Stack<string> stringstack;
+	Queue<int> intqueue;
 	int entry;
 	string entry2;
+	
 
 	//Item Type int
 	cout << "Testing push " << endl;
@@ -74,6 +77,15 @@ int main()
 	stringstack.pop();
 	cout << "Number of Elements in the Stack: " << stringstack.getCount() << endl;//Should be 0
 	cout << endl;
+	
+	//Testing Queues Here
+	intqueue.enQueue(17);
+	intqueue.enQueue(36);
+	intqueue.enQueue(49);
+	cout << intqueue.getFront() << endl;
+	cout << intqueue.getRear() << endl; //Something goes bad here.
+	cout << intqueue.queueSize() << endl;
+	cout << intqueue.queueEmpty() << endl;
 
 
 
