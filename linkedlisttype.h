@@ -144,6 +144,7 @@ void insertLast(Type& other) {
 	}
 	count++;
 }
+
 template<class Type>
 void linkedListType<Type>::deleteNodeLast() 
 {
@@ -151,25 +152,43 @@ void linkedListType<Type>::deleteNodeLast()
 	temp1 = new nodeType<Type>();
 	temp1 = first;
 
-	nodeType<Type> *old_temp;
-	old_temp = new nodeType<Type>();
-	while (temp1->link != NULL)
+	if (first == NULL)
 	{
-		old_temp = temp1;
-		temp1 = temp1->link;
+		cout << "The List is Empty." << endl;
 	}
-	old_temp->link = NULL;
-	delete temp1;
+	else{
+
+		nodeType<Type> *old_temp;
+		old_temp = new nodeType<Type>();
+		while (temp1->link != NULL)
+		{
+			old_temp = temp1;
+			temp1 = temp1->link;
+		}
+		old_temp->link = NULL;
+		delete temp1;
+	}
+
+	count--;
 }
 
 template<class Type>
 void linkedListType<Type>::deleteNodeFirst()
 {
-	nodeType<Type> *temp;
-	temp = new nodeType<Type>();
-	temp = first;
-	first = first->link;
-	free(temp);
+	if (first == NULL)
+	{
+		cout << "The List is Empty" << endl;
+	}
+	else
+	{
+		nodeType<Type> *temp;
+		temp = new nodeType<Type>();
+		temp = first;
+		first = first->link;
+		free(temp);
+
+	}
+	
 	count--;
 }
 
