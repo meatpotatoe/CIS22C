@@ -14,10 +14,8 @@ public:
 	bool queueEmpty() const;
 	int queueSize() const;
 	Type getFront() const;
-	Type getRear() const;
 	void deQueue();
 	void enQueue(Type);
-
 };
 
 template<class Type>
@@ -36,12 +34,6 @@ template<class Type>
 Type Queue<Type>::getFront() const
 {
 	return this->Top();
-}
-
-template <class Type>
-Type Queue<Type>::getRear() const
-{
-	return this->Bot();
 }
 
 template<class Type>
