@@ -33,8 +33,14 @@ int Queue<Type>::queueSize() const
 template<class Type>
 Type Queue<Type>::getFront() const
 {
-	return this->Top();
+	try{
+		return this->Top();
+	}
+	catch (const char* s){
+		throw s;
+	}
 }
+
 
 template<class Type>
 void Queue<Type>::deQueue()
