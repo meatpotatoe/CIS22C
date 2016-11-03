@@ -80,14 +80,27 @@ void linkedListType<Type>::destroyList()
 template<class Type>
 Type linkedListType<Type>::Top() const
 {
-	assert(first != NULL);
-	return first->data;
+	if (first == NULL)
+	{
+		cout << "The List is Empty" << endl;
+		return NULL;
+	}
+	else{
+		return first->data;
+	}
+	
 }
 template<class Type>
 Type linkedListType<Type>::Bot() const
 {
-	assert(last != NULL);
-	return last->data;
+	if (first == NULL)
+	{
+		cout << "The List is Empty" << endl;
+		return NULL;
+	}
+	else{
+		return last->data;
+	}
 }
 template<class Type>
 linkedList<Type> linkedListType<Type>::begin()
@@ -146,7 +159,7 @@ void insertLast(Type& other) {
 }
 
 template<class Type>
-void linkedListType<Type>::deleteNodeLast() 
+void linkedListType<Type>::deleteNodeLast()
 {
 	nodeType<Type> *temp1;
 	temp1 = new nodeType<Type>();
@@ -188,7 +201,7 @@ void linkedListType<Type>::deleteNodeFirst()
 		free(temp);
 
 	}
-	
+
 	count--;
 }
 
