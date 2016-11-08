@@ -1,5 +1,3 @@
-//Assume all Operands are Single Digits
-
 #include <iostream>
 #include <stdio.h>
 #include<stdlib.h>
@@ -102,7 +100,22 @@ int main()
 					valstack.pop();
 					op = opstack.getTop();
 					opstack.pop();
-					result = (op == '+') ? (operand1 + operand2) : 0;
+					if (op == '+')
+					{
+						result = operand1 + operand2;
+					}
+					else if (op == '-')
+					{
+						result = operand1 - operand2;
+					}
+					else if (op == '*')
+					{
+						result = operand1*operand2;
+					}
+					else if (op == '/')
+					{
+						result = operand1 / operand2;
+					}
 					valstack.push(result);
 				}
 				opstack.push(ch);
@@ -127,7 +140,22 @@ int main()
 					valstack.pop();
 					op = opstack.getTop();
 					opstack.pop();
-					result = (op == '-') ? (operand1 - operand2) : 0;
+					if (op == '+')
+					{
+						result = operand1 + operand2;
+					}
+					else if (op == '-')
+					{
+						result = operand1 - operand2;
+					}
+					else if (op == '*')
+					{
+						result = operand1*operand2;
+					}
+					else if (op == '/')
+					{
+						result = operand1 / operand2;
+					}
 					valstack.push(result);
 				}
 				opstack.push(ch);
@@ -153,7 +181,22 @@ int main()
 					valstack.pop();
 					op = opstack.getTop();
 					opstack.pop();
-					result = (op == '*') ? (operand1 * operand2) : 0;
+					if (op == '+')
+					{
+						result = operand1 + operand2;
+					}
+					else if (op == '-')
+					{
+						result = operand1 - operand2;
+					}
+					else if (op == '*')
+					{
+						result = operand1*operand2;
+					}
+					else if (op == '/')
+					{
+						result = operand1 / operand2;
+					}
 					valstack.push(result);
 				}
 				opstack.push(ch);
@@ -179,7 +222,22 @@ int main()
 					valstack.pop();
 					op = opstack.getTop();
 					opstack.pop();
-					result = (op == '/') ? (operand1 / operand2) : 0;
+					if (op == '+')
+					{
+						result = operand1 + operand2;
+					}
+					else if (op == '-')
+					{
+						result = operand1 - operand2;
+					}
+					else if (op == '*')
+					{
+						result = operand1*operand2;
+					}
+					else if (op == '/')
+					{
+						result = operand1 / operand2;
+					}
 					valstack.push(result);
 				}
 				opstack.push(ch);
