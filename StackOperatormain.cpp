@@ -244,6 +244,35 @@ int main()
 			}
 
 			break;
+		case(')'):
+			while (opstack.getTop() != '(')
+			{
+				operand2 = valstack.getTop();
+				valstack.pop();
+				operand1 = valstack.getTop();
+				valstack.pop();
+				op = opstack.getTop();
+				opstack.pop();
+				if (op == '+')
+				{
+					result = operand1 + operand2;
+				}
+				else if (op == '-')
+				{
+					result = operand1 - operand2;
+				}
+				else if (op == '*')
+				{
+					result = operand1*operand2;
+				}
+				else if (op == '/')
+				{
+					result = operand1 / operand2;
+				}
+				valstack.push(result);
+			}
+			opstack.pop();
+			break;
 		}
 	}
 
